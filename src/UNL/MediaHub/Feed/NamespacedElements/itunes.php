@@ -3,9 +3,9 @@
 class UNL_MediaHub_Feed_NamespacedElements_itunes extends UNL_MediaHub_Feed_NamespacedElements
 {
     protected $xmlns = 'itunes';
-    
+
     protected $uri = 'http://www.itunes.com/dtds/podcast-1.0.dtd';
-    
+
     function getChannelElements()
     {
         return array(
@@ -21,7 +21,7 @@ class UNL_MediaHub_Feed_NamespacedElements_itunes extends UNL_MediaHub_Feed_Name
             'summary',
             );
     }
-    
+
     function getItemElements()
     {
         return array(

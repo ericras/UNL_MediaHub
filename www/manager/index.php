@@ -15,4 +15,3 @@ $outputcontroller->setTemplatePath(dirname(dirname(__FILE__)).'/templates/html')
 $outputcontroller->addTemplatePath(dirname(__FILE__).'/templates');
 
 echo $outputcontroller->render($manager);
-

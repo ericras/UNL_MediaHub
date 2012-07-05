@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Media_VideoTextTrack extends UNL_MediaHub_Media
 {
     /**

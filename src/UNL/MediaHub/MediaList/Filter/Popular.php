@@ -6,7 +6,7 @@ class UNL_MediaHub_MediaList_Filter_Popular implements UNL_MediaHub_Filter
     {
         return 'popular';
     }
-    
+
     function apply(Doctrine_Query &$query)
     {
         $popular = array();
@@ -30,22 +30,22 @@ class UNL_MediaHub_MediaList_Filter_Popular implements UNL_MediaHub_Filter
 
         $query->where($where);
     }
-    
+
     function getLabel()
     {
         return 'Top Content';
     }
-    
+
     function getType()
     {
         return '';
     }
-    
+
     function getValue()
     {
         return '';
     }
-    
+
     function __toString()
     {
         return '';

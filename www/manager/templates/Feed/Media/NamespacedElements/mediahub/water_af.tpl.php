@@ -1,21 +1,20 @@
-<script type="text/javascript">
-    //<![CDATA[ 
-    WDN.jQuery(document).ready(function() { 
+<script>
+    WDN.jQuery(document).ready(function() {
         //water info.
         if (WDN.jQuery('#water_cfs').val() == '') {
           WDN.jQuery('#water_cfs_form').hide();
         }
-        
+
         if (WDN.jQuery('#water_maf').val() == '') {
             WDN.jQuery('#water_maf_form').hide();
         }
-        
+
         WDN.jQuery('#show_cfs').click(function() {
           WDN.jQuery('#water_cfs_form').show();
           WDN.jQuery('#water_maf_form').hide();
           return false;
         });
-        
+
         WDN.jQuery('#show_maf').click(function() {
           WDN.jQuery('#water_maf_form').show();
           WDN.jQuery('#water_cfs_form').hide();
@@ -30,8 +29,7 @@
         WDN.jQuery('#water_cfs').change(function() {
             WDN.jQuery('#water_maf').val('');
         });
-    }); 
-    //]]>
+    });
 </script>
 
 <label for="water_flow_type" class="element">Water Quantity Type:</label>

@@ -1,7 +1,6 @@
 <?php
 abstract class UNL_MediaHub_Models_BaseMediaComment extends Doctrine_Record
 {
-
     public function setTableDefinition()
     {
         $this->setTableName('comments');
@@ -11,11 +10,9 @@ abstract class UNL_MediaHub_Models_BaseMediaComment extends Doctrine_Record
         $this->hasColumn('comment',       'string',    null, array('fixed' => false, 'primary' => false, 'notnull' => true, 'autoincrement' => false));
         $this->hasColumn('datecreated',   'timestamp', null, array('primary' => false, 'notnull' => true, 'autoincrement' => false));
     }
-    
+
     public function setUp()
     {
         parent::setUp();
     }
-
 }
-

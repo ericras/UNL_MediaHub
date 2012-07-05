@@ -1,24 +1,23 @@
 <?php
+
 class UNL_MediaHub
 {
     public $dsn;
-    
+
     function __construct($dsn)
     {
-
         Doctrine_Manager::getInstance()->setAttribute('model_loading', 'conservative');
         Doctrine::loadModels(dirname(dirname(__FILE__)).'/UNL/MediaHub/Media');
         Doctrine_Manager::connection($dsn);
-
     }
 
     /**
-     * 
+     *
      * @return Doctrine_Connection
      */
     function getDB()
     {
-    	return Doctrine_manager::getInstance()->getCurrentConnection();
+        return Doctrine_manager::getInstance()->getCurrentConnection();
     }
 
     public static function registerAutoloaders()
@@ -31,12 +30,10 @@ class UNL_MediaHub
 
     public static function loader($class)
     {
-
         $class = str_replace(array('_', '\\'), '/', $class);
         include $class . '.php';
-
     }
-    
+
     /**
      * Add media to the mediahub
      *
@@ -51,7 +48,7 @@ class UNL_MediaHub
         $media->save();
         return $media;
     }
-    
+
     /**
      * Add media from a Harvester.
      *
@@ -62,14 +59,14 @@ class UNL_MediaHub
     function harvest(UNL_MediaHub_Harvester $harvester)
     {
         foreach ($harvester as $url=>$harvested_media) {
-            
+
             if (!($harvested_media instanceof UNL_MediaHub_HarvestedMedia)) {
                 throw new Exception('Harvesters must return a UNL_MediaHub_HarvestedMedia class!');
             }
-            
+
             // Collect the namespaced elements first
             $namespacedElements = $harvested_media->getNamespacedElements();
-            $add_ns_elements = array(); 
+            $add_ns_elements = array();
             if (count($namespacedElements)) {
                 foreach ($namespacedElements as $xmlns=>$elements) {
                     switch($xmlns) {
@@ -88,7 +85,7 @@ class UNL_MediaHub
                     }
                 }
             }
-            
+
             // Try and find an existing one with this URL.
             if ($media = UNL_MediaHub_Media::getByURL($harvested_media->getURL())) {
                 // Already exists do update
@@ -99,8 +96,8 @@ class UNL_MediaHub
                 $media->title       = $harvested_media->getTitle();
                 $media->description = $harvested_media->getDescription();
                 $media->datecreated = $harvested_media->getDatePublished();
-                
-                
+
+
                 $media->UNL_MediaHub_Feed_Media_NamespacedElements_itunes->delete();
                 //$media->UNL_MediaHub_Feed_Media_NamespacedElements_media->delete();
                 $media->save();
@@ -139,11 +136,10 @@ class UNL_MediaHub
                     return true;
             }
         }
-    
+
         if (strpos($media, 'video') === 0) {
             return true;
         }
         return false;
     }
-
 }

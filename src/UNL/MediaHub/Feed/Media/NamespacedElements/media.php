@@ -1,15 +1,16 @@
 <?php
+
 /**
- * elements for the Yahoo Media RSS spec
+ * Elements for the Yahoo Media RSS spec
  * http://search.yahoo.com/mrss/
  *
  */
 class UNL_MediaHub_Feed_Media_NamespacedElements_media extends UNL_MediaHub_Feed_Media_NamespacedElements
 {
     public static $xmlns = 'media';
-    
+
     public static $uri = 'http://search.yahoo.com/mrss/';
-    
+
     function getItemElements()
     {
         return array(
@@ -28,7 +29,7 @@ class UNL_MediaHub_Feed_Media_NamespacedElements_media extends UNL_MediaHub_Feed
             'restriction',
             );
     }
-    
+
     public static function mediaHasElement($media_id, $element)
     {
         return UNL_MediaHub_Feed_Media_NamespacedElements::mediaHasElement($media_id, $element, 'media');

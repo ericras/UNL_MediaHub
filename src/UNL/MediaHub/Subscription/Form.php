@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Subscription_Form
 {
     public $action;

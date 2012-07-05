@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_User extends UNL_MediaHub_Models_BaseUser
 {
     /**
@@ -16,7 +17,7 @@ class UNL_MediaHub_User extends UNL_MediaHub_Models_BaseUser
         }
         return self::addUser($uid);
     }
-    
+
     /**
      * Add a new user.
      *
@@ -37,7 +38,7 @@ class UNL_MediaHub_User extends UNL_MediaHub_Models_BaseUser
                                    $user);
         return $user;
     }
-    
+
     /**
      * return a list of feeds for this user.
      *

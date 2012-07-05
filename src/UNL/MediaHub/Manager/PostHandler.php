@@ -1,6 +1,8 @@
 <?php
+
 /**
  * Class which handles post data and media uploads
+ *
  * @author bbieber
  */
 class UNL_MediaHub_Manager_PostHandler
@@ -25,11 +27,11 @@ class UNL_MediaHub_Manager_PostHandler
          */
         $this->sortPostFeedElements();
     }
-    
+
     /**
      * Sorts feed elements in the post attribute so that the elements are listed
      * alphabetically.
-     * 
+     *
      * @return null
      */
     private function sortPostFeedElements()
@@ -41,13 +43,13 @@ class UNL_MediaHub_Manager_PostHandler
             }
         }
     }
-    
+
     /**
      * Compares two feed elements
-     * 
+     *
      * @param $a the first element to compare
      * @param $b the second elemenet to compare
-     * 
+     *
      * @return int 1 if greater, -1 if less than, 0 if the same.
      */
     private function comparePostFeedElements($a, $b)
@@ -56,16 +58,16 @@ class UNL_MediaHub_Manager_PostHandler
         if (!(is_array($a) && is_array($b))) {
             return 0;
         }
-        
+
         //element must be defined inorder to sort.
         if (!(isset($a['element']) && isset($b['element']))) {
             return 0;
         }
-        
+
         if ($a['element'] == $b['element']) {
             return 0;
         }
-        
+
         return ($a['element'] < $b['element']) ? -1 : 1;
     }
 
@@ -154,13 +156,13 @@ class UNL_MediaHub_Manager_PostHandler
 
     /**
      * Handles new media file uploads
-     * 
+     *
      * Copies any files posted to the uploads directory, with a unique filename.
-     * 
+     *
      * After the file has been saved, the URL to the media is returned.
-     * 
+     *
      * @see UNL_MediaHub_Manager::getUploadDirectory()
-     * 
+     *
      * @return string URL to media
      */
     protected function _handleMediaFileUpload()
@@ -188,7 +190,7 @@ class UNL_MediaHub_Manager_PostHandler
         if ($extension == '3gp') {
             $extension = 'mp4';
         }
-        
+
         $filename = md5(microtime() + rand()) . '.'. $extension;
 
         // Copy file to uploads diretory
@@ -203,9 +205,9 @@ class UNL_MediaHub_Manager_PostHandler
 
     /**
      * Checks if the filename is supported.
-     * 
+     *
      * @param string $filename Filename to check
-     * 
+     *
      * @return bool
      */
     public static function validMediaFileName($filename)
@@ -269,10 +271,10 @@ class UNL_MediaHub_Manager_PostHandler
                              'description'=> $this->post['description']);
             $media = $this->mediahub->addMedia($details);
         }
-        
+
         // Save details
         $media->synchronizeWithArray($this->post);
-        
+
         $media->save();
 
         if (!empty($this->post['feed_id'])) {

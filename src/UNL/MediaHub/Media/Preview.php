@@ -1,7 +1,7 @@
 <?php
+
 class UNL_MediaHub_Media_Preview implements UNL_MediaHub_MediaInterface
 {
-
     public $options = array();
 
     public $url;
@@ -15,7 +15,6 @@ class UNL_MediaHub_Media_Preview implements UNL_MediaHub_MediaInterface
         $this->options = $options + $this->options;
 
         $this->setURL($this->options['url']);
-
     }
 
     public function setURL($url)
@@ -34,7 +33,7 @@ class UNL_MediaHub_Media_Preview implements UNL_MediaHub_MediaInterface
 
     /**
      * Get the dimensions of the video
-     * 
+     *
      * @return array|false array an array with 7 elements.
      *     Index 0 and 1 contains respectively the width and the height of the image.
      *     On failure, false is returned.

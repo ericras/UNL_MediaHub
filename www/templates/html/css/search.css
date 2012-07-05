@@ -1,29 +1,29 @@
-/* 
+/*
 -------------------------------------------------
 Supporting styles for search box
 -------------------------------------------------
 */
 body.fixed #maincontent {
-    overflow:visible;	
+    overflow: visible;
 }
 #wdn_app_search {
-    padding:10px;
-    margin-bottom:20px;
-    padding-right:0;
+    padding: 10px;
+    margin-bottom: 20px;
+    padding-right: 0;
 }
 #wdn_app_search form {
     float: right;
     position: relative;
 }
 #wdn_app_search label {
-	position:absolute;
-	left:15px;
-	top:3px;
-	z-index:10;
-	display:none;
+    position: absolute;
+    left: 15px;
+    top: 3px;
+    z-index: 10;
+    display: none;
 }
 #q_app {
-	padding: 2px;
+    padding: 2px;
     width: 200px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -35,12 +35,12 @@ body.fixed #maincontent {
     font-weight: bold;
     height: 14px;
     margin: 0;
-    margin-right:5px;
+    margin-right: 5px;
 }
 .search_submit_button {
-	width:20px;
-	text-indent:-9999em;
-	height:20px;
-	background:url("images/magnifyingGlass.png") no-repeat scroll 0 0 transparent;
-	border:none;
+    width: 20px;
+    text-indent: -9999em;
+    height: 20px;
+    background: url("images/magnifyingGlass.png") no-repeat scroll 0 0 transparent;
+    border: none;
 }

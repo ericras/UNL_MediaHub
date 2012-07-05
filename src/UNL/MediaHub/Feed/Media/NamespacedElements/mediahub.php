@@ -1,19 +1,20 @@
 <?php
+
 /**
  * mediahub namespace.  To house all xml information that does not fit well with an exisiting standard or is unique to mediahub.
- * 
+ *
  * @author mfairchild
  *
  */
 class UNL_MediaHub_Feed_Media_NamespacedElements_mediahub extends UNL_MediaHub_Feed_Media_NamespacedElements
 {
     public static $xmlns = 'mediahub';
-    
+
     public static $uri = '';
 
     /**
      * Static var which holds the custom item element names.
-     * 
+     *
      * @var array Array of key=>description pairs
      */
     protected static $itemElements = array();
@@ -25,7 +26,7 @@ class UNL_MediaHub_Feed_Media_NamespacedElements_mediahub extends UNL_MediaHub_F
 
     /**
      * Get the custom MediaHub item elements
-     * 
+     *
      * @return array Array of key=>description pairs
      */
     public static function getCustomElements()
@@ -35,7 +36,7 @@ class UNL_MediaHub_Feed_Media_NamespacedElements_mediahub extends UNL_MediaHub_F
 
     /**
      * Set the item elements placed under the mediahub namespace
-     * 
+     *
      * @param array $elements Array of key=>description pairs
      */
     public static function setCustomElements($elements)

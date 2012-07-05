@@ -1,4 +1,4 @@
-/* 
+/*
 -------------------------------------------------
 Supporting styles for individual presentation of channel pages
 -------------------------------------------------
@@ -18,19 +18,19 @@ Supporting styles for individual presentation of channel pages
     width:175px;
 }
 #maincontent #channelIntro h1 {
-    padding-bottom:0;   
+    padding-bottom:0;
 }
 #maincontent #channelIntro h6.subhead {
     font-size:0.85em;
     padding-top:0.3em;
-    margin-bottom:15px; 
+    margin-bottom:15px;
 }
 #maincontent #channelIntro ul{
-    margin:10px 0;  
+    margin:10px 0;
     padding:0;
 }
 #maincontent #channelIntro ul li {
     list-style:none;
-    display:inline; 
-    padding:0px 10px 0 0;   
+    display:inline;
+    padding:0px 10px 0 0;
 }

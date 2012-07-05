@@ -6,8 +6,8 @@ if (isset($_GET['id'])) {
 $url = UNL_MediaHub_Manager::getURL(null, array_merge($context->options, array('page'=>'{%page_number}')));
 ?>
 <div class="group">
-	<h3>Media in this Channel</h3>
-	<a class="add_media" title="Add media to this feed" href="<?php echo $addMediaURL; ?>">Add media</a>
+    <h3>Media in this Channel</h3>
+    <a class="add_media" title="Add media to this feed" href="<?php echo $addMediaURL; ?>">Add media</a>
 </div>
 <?php
 if (count($context->items)) {
@@ -30,7 +30,7 @@ if (count($context->items)) {
             <?php
             $element = $media->datecreated;
                     echo '<h6 class="subhead">Added on '.date("F j, Y, g:i a", strtotime($element)).'</h6>';
-                    
+
             $summary = $media->description;
             if ($element = UNL_MediaHub_Feed_Media_NamespacedElements_itunes::mediaHasElement($media->id, 'summary')) {
                 $summary .= '<span class="itunes_summary">'.$element->value.'</span>';
@@ -41,8 +41,8 @@ if (count($context->items)) {
             <p><?php echo $summary; ?></p>
             </div>
         </li>
-    <?php  
-    } 
+    <?php
+    }
     echo '</ul>';
     ?>
     <em>Displaying <?php echo $context->first; ?> through <?php echo $context->last; ?> out of <?php echo $context->total; ?></em>
@@ -51,4 +51,3 @@ if (count($context->items)) {
     echo '<p>This channel has no media yet.</p>';
 }
 ?>
-

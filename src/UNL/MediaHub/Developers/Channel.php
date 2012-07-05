@@ -1,12 +1,13 @@
 <?php
+
 class UNL_MediaHub_Developers_Channel
 {
     public $title       = "Channel";
-    
+
     public $uri         = "channels/{id}";
-    
+
     public $exampleURI  = "channels/1";
-    
+
     public $properties  = array(
                                 array("id", "int: A numerical id for the media.", true, false),
                                 array("link", "URL: The url to the media file on Media Hub.", true, true),
@@ -25,9 +26,9 @@ class UNL_MediaHub_Developers_Channel
                                 array("ttl","Int: The maximum number of minutes the chanel has to live before referesing from the source.", false, true),
                                 array("{media}","A list of the <a href='?resource=media'>media instances</a> in the channel.", true, true)
                                 );
-                                
+
     public $formats     = array("json", "xml", "partial");
-    
+
     function __construct()
     {
         $this->uri = UNL_MediaHub_Controller::$url . $this->uri;

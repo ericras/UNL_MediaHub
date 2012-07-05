@@ -2,7 +2,7 @@
 
 class UNL_MediaHub_OutputController extends Savvy_Turbo
 {
-    
+
     function __construct($options = array())
     {
         Savvy_ClassToTemplateMapper::$classname_replacement = 'UNL_MediaHub_';
@@ -16,4 +16,3 @@ class UNL_MediaHub_OutputController extends Savvy_Turbo
         }
     }
 }
-

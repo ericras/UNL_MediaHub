@@ -1,4 +1,4 @@
-/* 
+/*
 -------------------------------------------------
 Supporting styles for the manager forms (add media, channel)
 -------------------------------------------------
@@ -34,8 +34,8 @@ form #thumbnail {
     opacity:0.7;
 }
 #maincontent form fieldset {
-	width:940px;
-	}
+    width:940px;
+}
 
 
 #maincontent form fieldset li #description_wrapper li {
@@ -47,29 +47,29 @@ form #thumbnail {
     width: auto;
 }
 #maincontent form fieldset li #description_wrapper iframe {
-	clear:both;
+    clear:both;
 }
 
 #maincontent #description_wrapper fieldset {
-	margin:0px !important;
-	padding:0px;
-	border:none;
-	background-color:#EEE;
-	float:none;
+    margin:0px !important;
+    padding:0px;
+    border:none;
+    background-color:#EEE;
+    float:none;
 }
 
 #maincontent #description_wrapper .yui-toolbar-titlebar {
-	padding:2px;
+    padding:2px;
 }
 
 #description-panel {
-	background-color:#FAFAFA;
-	border:1px solid #DDD;
+    background-color:#FAFAFA;
+    border:1px solid #DDD;
 }
 
 #description-panel .close {
-	background-color:#CCC;
-	border:1px solid;
+    background-color:#CCC;
+    border:1px solid;
 }
 iframe * {margin:0px}
 

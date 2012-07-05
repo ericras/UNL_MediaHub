@@ -18,7 +18,7 @@ $meta = '
 <meta name="title" content="'.htmlentities($context->title, ENT_QUOTES).'" />
 <meta name="description" content="'.htmlentities(strip_tags($context->description), ENT_QUOTES).'" />
 <link rel="image_src" href="'.$context->getThumbnailURL().'" />
-<script type="text/javascript">
+<script>
     WDN.initializePlugin("modal", [function() {
         WDN.jQuery(\'span.embed\').colorbox({inline: true, href:\'#sharing\', width:\'600px\', height:\'310px\'});
     }]);
@@ -30,19 +30,19 @@ if ($type == 'video') {
     $meta .= '
     <link rel="video_src" href="'.$context->url.'" />
     <meta property="og:video" content="'.htmlentities($context->url, ENT_QUOTES).'" />
-	<meta property="og:video:height" content="'.$height.'" />
-	<meta property="og:video:width" content="'.$width.'" />
-	<meta property="og:video:type" content="'.$context->type.'" />
+    <meta property="og:video:height" content="'.$height.'" />
+    <meta property="og:video:width" content="'.$width.'" />
+    <meta property="og:video:type" content="'.$context->type.'" />
     <meta property="og:image" content="'.$context->getThumbnailURL().'">
     <meta property="og:video" content="'.UNL_MediaHub_Controller::getURL($context).'" />
     <meta property="og:video:type" content="text/html" />
-	';
+    ';
 } else {
-	$meta .= '
-	<meta property="og:audio" content="'.$context->url.'" />
-	<meta property="og:audio:title" content="'.htmlentities($context->title, ENT_QUOTES).'" />
-	<meta property="og:audio:type" content="'.$context->type.'" />
-	';
+    $meta .= '
+    <meta property="og:audio" content="'.$context->url.'" />
+    <meta property="og:audio:title" content="'.htmlentities($context->title, ENT_QUOTES).'" />
+    <meta property="og:audio:type" content="'.$context->type.'" />
+    ';
 }
 UNL_MediaHub_Controller::setReplacementData('head', $meta);
 UNL_MediaHub_Controller::setReplacementData('pagetitle', '<h1>'.$context->title.'</h1>');
@@ -65,24 +65,24 @@ echo $mediaplayer;
     ?>
   <p><?php echo $summary; ?></p>
 
-  
+
     <ul id="mediaTags">
         <?php
         foreach ($context->getTags() as $tag) {
             echo '<li><a href="'.UNL_MediaHub_Controller::$url.'tags/'.urlencode(trim($tag)).'">'.$tag.'</a></li>';
         }
-	    if (UNL_MediaHub_Controller::isLoggedIn()) {
-	    	echo '<li id="mediaTagsAdd"><a href="#">Add tags</a><form id="addTags" method="post"><input type="text" value="" name="tags" /><input type="submit" value="Add" /></form></li>';
-	    } else {
-	    	echo '<li id="mediaTagsAdd"><a href="https://login.unl.edu/cas/login?service='.urlencode(UNL_MediaHub_Controller::getURL()).'">Login to add tags </a></li>';
-	    }
+        if (UNL_MediaHub_Controller::isLoggedIn()) {
+            echo '<li id="mediaTagsAdd"><a href="#">Add tags</a><form id="addTags" method="post"><input type="text" value="" name="tags" /><input type="submit" value="Add" /></form></li>';
+        } else {
+            echo '<li id="mediaTagsAdd"><a href="https://login.unl.edu/cas/login?service='.urlencode(UNL_MediaHub_Controller::getURL()).'">Login to add tags </a></li>';
+        }
 
-	    ?>
+        ?>
     </ul>
 
     <div id="comments">
-    <script type="text/javascript">
-    	WDN.loadCSS('../templates/html/css/comments.css');
+    <script>
+        WDN.loadCSS('../templates/html/css/comments.css');
     </script>
     <h4>Comments</h4>
     <span class="subhead"><?php echo count($context->UNL_MediaHub_Media_Comment); ?> Comments | <a href="#commentForm">Leave Yours</a></span>
@@ -92,7 +92,7 @@ echo $mediaplayer;
         foreach ($context->UNL_MediaHub_Media_Comment as $comment) {
             echo '<li>';
             if ($name = UNL_Services_Peoplefinder::getFullName($comment['uid'])) {
-                
+
             }
             echo '<img alt="Your Profile Pic" src="http://planetred.unl.edu/pg/icon/unl_'.$comment['uid'].'/small/" class="profile_pic small"> ';
             echo '<h5 class="commenter sec_header">'.$name.'</h5>';
@@ -115,12 +115,12 @@ echo $mediaplayer;
 <div class="grid4 supportingContent" id="properties">
     <div class="zenbox neutral">
     <h3>About this Media</h3>
-    <?php 
-	   if ($type == 'video') {
-	?>
-	<span class="size"><?php echo $dimensions[0] . 'x' .$dimensions[1];?></span>
-	<?php } ?>
-    <span class="duration"><?php 
+    <?php
+       if ($type == 'video') {
+    ?>
+    <span class="size"><?php echo $dimensions[0] . 'x' .$dimensions[1];?></span>
+    <?php } ?>
+    <span class="duration"><?php
         if(!empty($context->length)) {
             $s = array('bytes', 'kb', 'MB', 'GB');
             $e = floor(log($context->length)/log(1024));

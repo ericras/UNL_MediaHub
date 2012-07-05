@@ -1,7 +1,7 @@
 <?php
+
 abstract class UNL_MediaHub_Models_BaseSubscription extends Doctrine_Record
 {
-
     public function setTableDefinition()
     {
         $this->setTableName('subscriptions');
@@ -11,5 +11,4 @@ abstract class UNL_MediaHub_Models_BaseSubscription extends Doctrine_Record
         $this->hasColumn('datecreated',   'timestamp', null, array('primary' => false, 'notnull' => true, 'autoincrement' => false));
         $this->hasColumn('uidcreated',    'string',    null, array('primary' => false, 'notnull' => true, 'autoincrement' => false));
     }
-
 }

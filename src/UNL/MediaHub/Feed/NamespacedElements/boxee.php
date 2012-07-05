@@ -3,9 +3,9 @@
 class UNL_MediaHub_Feed_NamespacedElements_boxee extends UNL_MediaHub_Feed_NamespacedElements
 {
     protected $xmlns = 'boxee';
-    
+
     protected $uri = 'as http://boxee.tv/spec/rss/';
-    
+
     function getChannelElements()
     {
         return array(

@@ -1,7 +1,7 @@
 <?php
+
 abstract class UNL_MediaHub_Models_BaseFeed extends Doctrine_Record
 {
-
     public function setTableDefinition()
     {
         $this->setTableName('feeds');
@@ -32,5 +32,4 @@ abstract class UNL_MediaHub_Models_BaseFeed extends Doctrine_Record
                                                                                 'foreign'  => 'feed_id'));
         parent::setUp();
     }
-  
 }

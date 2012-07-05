@@ -6,7 +6,7 @@ if ($context->isVideo()) {
     echo $savvy->render($context, 'MediaPlayer/Audio.tpl.php');
 }
 ?>
-<script type="text/javascript">
+<script>
 (function() {
 var j, l, t, r = function() {
     WDN.initializePlugin('mediaelement_wdn', [function(){

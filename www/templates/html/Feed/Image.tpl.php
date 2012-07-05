@@ -7,4 +7,3 @@ if (!empty($context->image_data) && !empty($context->image_type)) {
     header('Content-type:image/png');
     echo file_get_contents(dirname(__FILE__).'/../../../manager/templates/css/images/iconTV.png');
 }
-

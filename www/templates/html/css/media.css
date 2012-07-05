@@ -1,4 +1,4 @@
-/* 
+/*
 -------------------------------------------------
 Supporting styles for individual presentation of media pages
 -------------------------------------------------
@@ -6,10 +6,10 @@ Supporting styles for individual presentation of media pages
 .supportingContent {margin-top:20px;}
 #properties h5 {
     font-weight:bold;
-    font-size:1.1em;	
+    font-size:1.1em;
 }
 #properties h5 + p {
-    font-size:0.8em;	
+    font-size:0.8em;
 }
 
 .size {
@@ -30,12 +30,12 @@ Supporting styles for individual presentation of media pages
 
 .duration {
     background:url('images/iconClock.png') no-repeat 0 3px;
-    padding:0px 0 2px 17px;	
+    padding:0px 0 2px 17px;
 }
 
-/* 
+/*
 -------------------------------------------------
-Tags 
+Tags
 -------------------------------------------------
 */
 
@@ -91,7 +91,7 @@ Tags
     padding:2px 4px;
 }
 
-/* 
+/*
 -------------------------------------------------
 Embed
 -------------------------------------------------
@@ -112,7 +112,7 @@ Embed
     cursor:pointer;
     color:#7d7d7d;
 }
-#maincontent #sharing{display:none;}
+#maincontent #sharing {display:none;}
 #sharing h3 {
     font-size:2.4em;
     font-weight:bold;
@@ -121,6 +121,6 @@ Embed
     text-transform:capitalize;
 }
 #sharing p {
-    margin:15px 0;  
+    margin:15px 0;
 }
 #sharing textarea {width:96%;}

@@ -24,13 +24,13 @@ if (count($context->items)) {
         new Doctrine_Pager_Range_Sliding(array('chunk'=>5)),
         htmlentities($url));
     $pager_links = $pager_layout->display(null, true);
-    
-	$addMediaURL = UNL_MediaHub_Manager::getURL().'?view=addmedia';
-	if (isset($_GET['id'])) {
-	    $addMediaURL .= '&amp;feed_id='.$_GET['id'];
-	}
-	$userCanEdit = false;
-	if (UNL_MediaHub_Controller::isLoggedIn()
+
+    $addMediaURL = UNL_MediaHub_Manager::getURL().'?view=addmedia';
+    if (isset($_GET['id'])) {
+        $addMediaURL .= '&amp;feed_id='.$_GET['id'];
+    }
+    $userCanEdit = false;
+    if (UNL_MediaHub_Controller::isLoggedIn()
         && $parent->context instanceof UNL_MediaHub_FeedAndMedia
         && $parent->context->feed->userHasPermission(UNL_MediaHub_Controller::getUser(),
             UNL_MediaHub_Permission::getByID(UNL_MediaHub_Permission::USER_CAN_INSERT))) {
@@ -38,38 +38,38 @@ if (count($context->items)) {
     }
 ?>
     <div class="group" style="margin-top:20px;">
-    	<h3>All Media</h3>
-    	<?php
-    	if ($parent->context instanceof UNL_MediaHub_FeedAndMedia) {
-		    $addMediaURL = UNL_MediaHub_Manager::getURL().'?view=addmedia&amp;feed_id='.$parent->context->feed->id;
-		    if (UNL_MediaHub_Controller::isLoggedIn()
-		        && $parent->context->feed->userHasPermission(UNL_MediaHub_Controller::getUser(),
-		            UNL_MediaHub_Permission::getByID(UNL_MediaHub_Permission::USER_CAN_INSERT))) {
-		        echo '<a href="'.$addMediaURL.'" title="Add media to this feed" class="add_media" >Add media</a>';
-		    }
-    	}
-	    ?>
+        <h3>All Media</h3>
+        <?php
+        if ($parent->context instanceof UNL_MediaHub_FeedAndMedia) {
+            $addMediaURL = UNL_MediaHub_Manager::getURL().'?view=addmedia&amp;feed_id='.$parent->context->feed->id;
+            if (UNL_MediaHub_Controller::isLoggedIn()
+                && $parent->context->feed->userHasPermission(UNL_MediaHub_Controller::getUser(),
+                    UNL_MediaHub_Permission::getByID(UNL_MediaHub_Permission::USER_CAN_INSERT))) {
+                echo '<a href="'.$addMediaURL.'" title="Add media to this feed" class="add_media" >Add media</a>';
+            }
+        }
+        ?>
     </div>
         <ul class="medialist">
-    
+
         <?php
         foreach ($context->items as $media) { ?>
             <li>
                 <a href="<?php echo UNL_MediaHub_Controller::getURL($media); ?>"><img class="thumbnail" src="<?php echo $media->getThumbnailURL(); ?>" alt="Thumbnail preview for <?php echo htmlspecialchars($media->title, ENT_QUOTES); ?>" /></a>
                 <?php if ($userCanEdit) { ?>
-	            <div class="actions">
-		            <a href="<?php echo $addMediaURL; ?>&amp;id=<?php echo $media->id; ?>">Edit</a>
-		            <?php
-		            echo $savvy->render($media, 'manager/templates/Media/DeleteForm.tpl.php');
-		            ?>
-	            </div>
-	            <?php }?>
+                <div class="actions">
+                    <a href="<?php echo $addMediaURL; ?>&amp;id=<?php echo $media->id; ?>">Edit</a>
+                    <?php
+                    echo $savvy->render($media, 'manager/templates/Media/DeleteForm.tpl.php');
+                    ?>
+                </div>
+                <?php }?>
                 <div class="metaInfo">
                 <h4><a href="<?php echo UNL_MediaHub_Controller::getURL($media); ?>"><?php echo htmlspecialchars($media->title); ?></a></h4>
                 <?php
                 $element = $media->datecreated;
                     echo '<h6 class="subhead">Added on '.date("F j, Y, g:i a", strtotime($element)).'</h6>';
-                
+
                 $summary = $media->description;
                 if ($element = UNL_MediaHub_Feed_Media_NamespacedElements_itunes::mediaHasElement($media->id, 'summary')) {
                     $summary .= '<span class="itunes_summary">'.$element->value.'</span>';
@@ -80,7 +80,7 @@ if (count($context->items)) {
                 <p><?php echo $summary; ?></p>
                 </div>
             </li>
-        <?php  
+        <?php
         } ?>
         </ul>
         <em>Displaying <?php echo $context->first; ?> through <?php echo $context->last; ?> out of <?php echo $context->total; ?></em>

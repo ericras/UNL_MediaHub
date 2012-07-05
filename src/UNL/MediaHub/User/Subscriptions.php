@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_User_Subscriptions extends UNL_MediaHub_SubscriptionList
 {
     function __construct($options = array())

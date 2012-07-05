@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Feed_Media_FileUpload_Progress
 {
     public $options = array();
@@ -25,7 +26,6 @@ class UNL_MediaHub_Feed_Media_FileUpload_Progress
             ) {
             $this->info = apc_fetch('upload_'.$this->options['id']);
         }
-
     }
 
     /**

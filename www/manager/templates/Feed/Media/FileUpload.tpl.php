@@ -1,10 +1,9 @@
 <?php
-// generate a random upload identifier
+// Generate a random upload identifier
 $upload_id = md5(microtime() . rand());
 
-function return_bytes($val)
-{
-    //This function transforms the php.ini notation for numbers (like '2M') to an integer (2*1024*1024 in this case)
+function return_bytes($val) {
+    //T his function transforms the php.ini notation for numbers (like '2M') to an integer (2*1024*1024 in this case)
     $l = substr($val, -1);
     $ret = substr($val, 0, -1);
     switch(strtoupper($l)){
@@ -24,7 +23,7 @@ function return_bytes($val)
 }
 
 ?>
-<script type="text/javascript">
+<script>
 var upload = function() {
 
     /* private variables */

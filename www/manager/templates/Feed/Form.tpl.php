@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 WDN.jQuery(document).ready(function() {
     WDN.jQuery('#extensions input').change(function() {
         if(this.checked){
@@ -9,17 +9,17 @@ WDN.jQuery(document).ready(function() {
         return true;
     });
     WDN.jQuery('#description').change(function(){
-		if (WDN.jQuery('#itunes_summary').val() == '') {
-			WDN.jQuery('#itunes_summary').val(WDN.jQuery(this).val());
-		}
-		if (WDN.jQuery('#media_description').val() == '') {
-			WDN.jQuery('#media_description').val(WDN.jQuery(this).val());
-		}
+        if (WDN.jQuery('#itunes_summary').val() == '') {
+            WDN.jQuery('#itunes_summary').val(WDN.jQuery(this).val());
+        }
+        if (WDN.jQuery('#media_description').val() == '') {
+            WDN.jQuery('#media_description').val(WDN.jQuery(this).val());
+        }
     });
     WDN.jQuery('#title').change(function(){
-		if (WDN.jQuery('#media_title').val() == '') {
-			WDN.jQuery('#media_title').val(WDN.jQuery(this).val());
-		}
+        if (WDN.jQuery('#media_title').val() == '') {
+            WDN.jQuery('#media_title').val(WDN.jQuery(this).val());
+        }
     });
 });
 </script>
@@ -225,7 +225,7 @@ WDN.jQuery(document).ready(function() {
                 <input name='UNL_MediaHub_Feed_NamespacedElements_itunes[3][element]' type='hidden' value='image' />
                 <input id='itunes_image' name='UNL_MediaHub_Feed_NamespacedElements_itunes[3][value]' type='text' value='<?php echo getFieldValue($context, 'itunes', 'image'); ?>' size='55' />
                 </div></li>-->
-                
+
                 <li><label for='itunes_explicit' class='element'>Explicit<span class="helper">Set to 'yes' if this feed contains explicit content</span></label>
                 <div class='element'>
                     <input name="UNL_MediaHub_Feed_NamespacedElements_itunes[4][element]" type="hidden" value="explicit"/>
@@ -239,7 +239,7 @@ WDN.jQuery(document).ready(function() {
                         ?>
                     </select>
                 </div></li>
-                
+
                 <li><label for='itunes_keywords' class='element'>Keywords<span class="helper">This tag allows users to search on a maximum of 12 text keywords. Use commas to separate keywords.</span></label><div class='element'>
                 <input name='UNL_MediaHub_Feed_NamespacedElements_itunes[5][element]' type='hidden' value='keywords' />
                 <input id='itunes_keywords' name='UNL_MediaHub_Feed_NamespacedElements_itunes[5][value]' type='text' value='<?php echo getFieldValue($context, 'itunes', 'keywords'); ?>' size='55' />
@@ -252,16 +252,16 @@ WDN.jQuery(document).ready(function() {
                 <input id='itunes_owner' name='UNL_MediaHub_Feed_NamespacedElements_itunes[7][value]' type='text' value='<?php echo getFieldValue($context, 'itunes', 'owner'); ?>' size='55' />
                 </div></li>
                 <li>
-	                <label for='itunes_subtitle' class='element'>Subtitle <span class="helper">The contents of this tag are shown in the Description column in iTunes. The subtitle displays best if it is only a few words long.</span></label>
-	                <input name='UNL_MediaHub_Feed_NamespacedElements_itunes[8][element]' type='hidden' value='subtitle' />
-	                <input id='itunes_subtitle' name='UNL_MediaHub_Feed_NamespacedElements_itunes[8][value]' type='text' value='<?php echo getFieldValue($context, 'itunes', 'subtitle'); ?>' size='55' />
+                    <label for='itunes_subtitle' class='element'>Subtitle <span class="helper">The contents of this tag are shown in the Description column in iTunes. The subtitle displays best if it is only a few words long.</span></label>
+                    <input name='UNL_MediaHub_Feed_NamespacedElements_itunes[8][element]' type='hidden' value='subtitle' />
+                    <input id='itunes_subtitle' name='UNL_MediaHub_Feed_NamespacedElements_itunes[8][value]' type='text' value='<?php echo getFieldValue($context, 'itunes', 'subtitle'); ?>' size='55' />
                 </li>
                 <li>
-	                <label for='itunes_summary' class='element'>Summary <span class="helper">The contents of this tag are shown in a separate window that appears when the "circled i" in the Description column is clicked. It also appears on the iTunes page for your podcast.</span></label>
-	                <input name='UNL_MediaHub_Feed_NamespacedElements_itunes[9][element]' type='hidden' value='summary' />
+                    <label for='itunes_summary' class='element'>Summary <span class="helper">The contents of this tag are shown in a separate window that appears when the "circled i" in the Description column is clicked. It also appears on the iTunes page for your podcast.</span></label>
+                    <input name='UNL_MediaHub_Feed_NamespacedElements_itunes[9][element]' type='hidden' value='summary' />
                     <textarea id="itunes_summary" name="UNL_MediaHub_Feed_NamespacedElements_itunes[9][value]" rows="5" cols="50"><?php echo getFieldValue($context, 'itunes', 'summary'); ?></textarea>
-				</li>
-				<li><label for="itunes_submit" class="element">&nbsp;</label><div class="element"><input id="itunes_submit" name="submit" value="Save" type="submit" /></div></li>
+                </li>
+                <li><label for="itunes_submit" class="element">&nbsp;</label><div class="element"><input id="itunes_submit" name="submit" value="Save" type="submit" /></div></li>
         </ol>
     </fieldset>
     <fieldset id="boxee_header" style="display:none">
@@ -301,11 +301,11 @@ WDN.jQuery(document).ready(function() {
                 <input id='media_title' name='UNL_MediaHub_Feed_NamespacedElements_media[1][value]' type='text' value='<?php echo getFieldValue($context, 'media', 'title'); ?>' size='55' />
                 </div></li>
                 <li>
-                	<label for='media_description' class='element'>Description</label>
-                	<input name='UNL_MediaHub_Feed_NamespacedElements_media[2][element]' type='hidden' value='description' />
-				    <textarea id="media_description" name="UNL_MediaHub_Feed_NamespacedElements_media[2][value]" rows="5" cols="50"><?php echo getFieldValue($context, 'media', 'description'); ?></textarea>
-				</li>
-				<li><label for='media_keywords' class='element'>Keywords<span class="helper">Comma seperated list of highly relevant keywords/tags describing the channel.</span></label><div class='element'>
+                    <label for='media_description' class='element'>Description</label>
+                    <input name='UNL_MediaHub_Feed_NamespacedElements_media[2][element]' type='hidden' value='description' />
+                    <textarea id="media_description" name="UNL_MediaHub_Feed_NamespacedElements_media[2][value]" rows="5" cols="50"><?php echo getFieldValue($context, 'media', 'description'); ?></textarea>
+                </li>
+                <li><label for='media_keywords' class='element'>Keywords<span class="helper">Comma seperated list of highly relevant keywords/tags describing the channel.</span></label><div class='element'>
                 <input name='UNL_MediaHub_Feed_NamespacedElements_media[3][element]' type='hidden' value='keywords' />
                 <input id='media_keywords' name='UNL_MediaHub_Feed_NamespacedElements_media[3][value]' type='text' value='<?php echo getFieldValue($context, 'media', 'keywords'); ?>' size='55' />
                 </div></li><li><label for='media_thumbnail' class='element'>Thumbnail <span class="helper">Allows particular images to be used as representative images for the media object.</span></label><div class='element'>
@@ -335,8 +335,8 @@ WDN.jQuery(document).ready(function() {
                 </div></li>            <li><label for="media_submit" class="element">&nbsp;</label><div class="element"><input id="media_submit" name="submit" value="Save" type="submit" /></div></li>
         </ol>
     </fieldset>
-        
-    
+
+
     <?php
     // Disable this rendering method for now since fields are hardcoded.
     if (false) {

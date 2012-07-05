@@ -24,24 +24,24 @@ if (isset($context->label) && !empty($context->label)) {
             <p>'.htmlentities($feed->description).'</p>';
             //@TODO add a check if user is logged in and if has permissions to this feed to edit. If true, add edit/delete links here.
             echo '</div>
-    		<div class="mediaSamples">
-    			'.$savvy->render($feed->getMediaList(), 'CompactMediaList.tpl.php').'
-    			<a href="'.htmlentities(UNL_MediaHub_Controller::getURL($feed), ENT_QUOTES).'" title="View all the media in this channel">See all media</a>
-    		</div>
-    		<div class="clear"></div>
+            <div class="mediaSamples">
+                '.$savvy->render($feed->getMediaList(), 'CompactMediaList.tpl.php').'
+                <a href="'.htmlentities(UNL_MediaHub_Controller::getURL($feed), ENT_QUOTES).'" title="View all the media in this channel">See all media</a>
+            </div>
+            <div class="clear"></div>
             </li>';
         }
         echo '</ul>';
         ?>
-        
+
         </div>
         <em>Displaying <?php echo $context->first; ?> through <?php echo $context->last; ?> out of <?php echo $context->total; ?></em>
         <?php echo $pager_links; ?>
-<?php 
+<?php
     } else {
         echo '
         <p>
             Sorry, I could not find any channels.
         </p>';
     }
-    ?>
+?>

@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 <?php
 if (isset($context->options['url'])
     && filter_var($context->options['url'], FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {

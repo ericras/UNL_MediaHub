@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Feed_Subscription extends UNL_MediaHub_Models_BaseFeedHasSubscription
 {
     function process()

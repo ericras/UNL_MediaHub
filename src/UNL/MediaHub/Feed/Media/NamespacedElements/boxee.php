@@ -1,12 +1,11 @@
 <?php
 
-
 class UNL_MediaHub_Feed_Media_NamespacedElements_boxee extends UNL_MediaHub_Feed_Media_NamespacedElements
 {
     public static $xmlns = 'boxee';
-    
+
     public static $uri = 'http://boxee.tv/spec/rss/';
-        
+
     function getItemElements()
     {
         return array(
@@ -33,24 +32,24 @@ class UNL_MediaHub_Feed_Media_NamespacedElements_boxee extends UNL_MediaHub_Feed
             'country-allow',    // US
             );
     }
-    
+
     public static function mediaHasElement($media_id, $element)
     {
         return UNL_MediaHub_Feed_Media_NamespacedElements::mediaHasElement($media_id, $element, 'boxee');
     }
-    
+
     function preInsert($event)
     {
         $this->setAlternativeLinkAttribute();
         return parent::preInsert($event);
     }
-    
+
     function preUpdate($event)
     {
         $this->setAlternativeLinkAttribute();
         return parent::preUpdate($event);
     }
-    
+
     function setAlternativeLinkAttribute()
     {
         if (!empty($this->attributes) && !is_array($this->attributes)) {

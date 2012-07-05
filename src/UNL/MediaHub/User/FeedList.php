@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_User_FeedList extends UNL_MediaHub_FeedList
 {
     function __construct($options = array())

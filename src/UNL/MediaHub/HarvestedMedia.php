@@ -1,7 +1,8 @@
 <?php
+
 /**
  * Class for media that is harvested from the wild
- * 
+ *
  * @author bbieber
  */
 class UNL_MediaHub_HarvestedMedia
@@ -11,8 +12,8 @@ class UNL_MediaHub_HarvestedMedia
     protected $description;
     protected $datePublished;
     protected $namespacedElements = array();
-    
-    
+
+
     function __construct($url, $title, $description, $datePublished, $namespacedElements = null)
     {
         $this->url           = $url;
@@ -23,31 +24,29 @@ class UNL_MediaHub_HarvestedMedia
             $this->namespacedElements = $namespacedElements;
         }
     }
-    
+
     function getURL()
     {
         return $this->url;
     }
-    
+
     function getTitle()
     {
         return $this->title;
     }
-    
+
     function getDescription()
     {
         return $this->description;
     }
-    
+
     function getDatePublished()
     {
         return date('Y-m-d H:i', $this->datePublished);
     }
-    
+
     function getNamespacedElements()
     {
         return $this->namespacedElements;
     }
 }
-
-?>

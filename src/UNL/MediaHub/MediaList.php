@@ -2,12 +2,12 @@
 
 class UNL_MediaHub_MediaList extends UNL_MediaHub_List
 {
-    
+
     public $options = array('orderby' => 'datecreated',
                             'order'   => 'DESC',
                             'page'    => 0,
                             'limit'   => 10);
-   
+
     public $tables = 'UNL_MediaHub_Media m';
 
     function __construct($options = array())
@@ -16,7 +16,7 @@ class UNL_MediaHub_MediaList extends UNL_MediaHub_List
         if (isset($options['format']) && $options['format'] !== 'html') {
             $options['limit'] = 0;
         }
-        
+
         $this->options = $options + $this->options;
         $this->filterInputOptions();
         $this->setUpFilter();
@@ -40,7 +40,7 @@ class UNL_MediaHub_MediaList extends UNL_MediaHub_List
         }
 
     }
-    
+
     function filterInputOptions()
     {
         switch ($this->options['order']) {
@@ -51,7 +51,7 @@ class UNL_MediaHub_MediaList extends UNL_MediaHub_List
                 $this->options['order'] = 'DESC';
                 break;
         }
-        
+
         switch ($this->options['orderby']) {
             case 'datecreated':
             case 'eventdate':
@@ -61,15 +61,15 @@ class UNL_MediaHub_MediaList extends UNL_MediaHub_List
                 $this->options['orderby'] = 'datecreated';
                 break;
         }
-        
+
         $this->options['page'] = (int)$this->options['page'];
     }
-    
+
     function setOrderBy(Doctrine_Query &$query)
     {
         $query->orderby('m.'.$this->options['orderby'].' '.$this->options['order']);
     }
-    
+
     function getURL()
     {
         $params = array();
@@ -89,14 +89,12 @@ class UNL_MediaHub_MediaList extends UNL_MediaHub_List
                     break;
             }
         }
-        
+
         $params['orderby'] = $this->options['orderby'];
         $params['order']   = $this->options['order'];
 
         $this->url = UNL_MediaHub_Controller::addURLParams($this->url, $params);
-        
+
         return $this->url;
     }
 }
-
-?>

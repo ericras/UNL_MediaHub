@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_CacheInterface_Mock implements Savvy_Turbo_CacheInterface
 {
     function get($key)
@@ -6,7 +7,7 @@ class UNL_MediaHub_CacheInterface_Mock implements Savvy_Turbo_CacheInterface
         // Expired cache always.
         return false;
     }
-    
+
     function save($key, $data)
     {
         // Make it appear as though it was saved.

@@ -1,7 +1,7 @@
 <?php
+
 abstract class UNL_MediaHub_Models_BaseUserHasPermission extends Doctrine_Record
 {
-
     public function setTableDefinition()
     {
         $this->setTableName('user_has_permission');
@@ -9,7 +9,7 @@ abstract class UNL_MediaHub_Models_BaseUserHasPermission extends Doctrine_Record
         $this->hasColumn('permission_id', 'integer',   4,    array('unsigned' => 0, 'primary' => true, 'notnull' => true, 'autoincrement' => true));
         $this->hasColumn('feed_id',       'integer',   4,    array('unsigned' => 0, 'primary' => true, 'notnull' => true, 'autoincrement' => true));
     }
-    
+
     public function setUp()
     {
         $this->hasOne('UNL_MediaHub_User',       array('local'   => 'user_uid',
@@ -20,5 +20,4 @@ abstract class UNL_MediaHub_Models_BaseUserHasPermission extends Doctrine_Record
                                                        'foreign' => 'id'));
         parent::setUp();
     }
-  
 }

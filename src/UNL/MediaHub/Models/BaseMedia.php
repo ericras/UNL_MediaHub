@@ -1,7 +1,7 @@
 <?php
+
 abstract class UNL_MediaHub_Models_BaseMedia extends Doctrine_Record
 {
-
     public function setTableDefinition()
     {
         $this->setTableName('media');
@@ -17,7 +17,7 @@ abstract class UNL_MediaHub_Models_BaseMedia extends Doctrine_Record
         $this->hasColumn('datecreated',   'timestamp', null, array('primary' => false, 'notnull' => true, 'autoincrement' => false));
         $this->hasColumn('dateupdated',   'timestamp', null, array('primary' => false, 'notnull' => false, 'autoincrement' => false));
     }
-    
+
     public function setUp()
     {
         $this->hasMany('UNL_MediaHub_Media_Comment', array('local'    => 'id',
@@ -39,5 +39,4 @@ abstract class UNL_MediaHub_Models_BaseMedia extends Doctrine_Record
                                                                                     'foreign' => 'media_id'));
         parent::setUp();
     }
-
 }

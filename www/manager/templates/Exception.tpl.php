@@ -7,8 +7,8 @@ if (false == headers_sent()
 }
 ?>
 
-<script type="text/javascript">
-WDN.initializePlugin('notice');
+<script>
+    WDN.initializePlugin('notice');
 </script>
 <div class="wdn_notice alert">
     <div class="close">

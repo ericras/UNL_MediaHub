@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Manager_PostHandler_UploadException extends Exception
 {
     public function __construct($upload_error_code, $code = null) {

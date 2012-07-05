@@ -1,6 +1,5 @@
 <?php
 
-
 class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_MediaHub_MediaInterface
 {
     /**
@@ -14,12 +13,12 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
     {
         return Doctrine::getTable(__CLASS__)->find($id);
     }
-    
+
     /**
      * Get a piece of media by URL
      *
      * @param string $url URL to the video/audio file
-     * 
+     *
      * @return UNL_MediaHub_Media
      */
     public static function getByURL($url)
@@ -30,12 +29,12 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
         }
         return false;
     }
-    
+
     /**
      * called before an item is inserted to the database
-     * 
+     *
      * @param $event
-     * 
+     *
      * @return void
      */
     public function preInsert($event)
@@ -45,21 +44,21 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
 
     /**
      * called before an item is updated in the database
-     * 
+     *
      * @param $event
-     * 
+     *
      * @return void
      */
     public function preUpdate($event)
     {
         $this->setContentType();
     }
-    
+
     /**
      * called after an item is inserted into the database
-     * 
+     *
      * @param $event
-     * 
+     *
      * @return void
      */
     public function postInsert($event)
@@ -76,10 +75,10 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
 //        $this->setMRSSThumbnail();
 //        $this->setMRSSContent();
     }
-    
+
     /**
      * Sets the thumbnail media rss element.
-     * 
+     *
      * @return true
      */
     function setMRSSThumbnail()
@@ -109,7 +108,7 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
 
     /**
      * Set the Media RSS, mrss content namespaced element
-     * 
+     *
      * @return true
      */
     function setMRSSContent()
@@ -138,22 +137,22 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
         $element->save();
         return true;
     }
-    
+
     /**
      * Check if this media is a video file.
-     * 
+     *
      * @param string URL or content-type
-     * 
+     *
      * @return bool
      */
     public function isVideo()
     {
         return UNL_MediaHub::isVideo($this->type);
     }
-    
+
     /**
      * Sets the content type for the media being added.
-     * 
+     *
      * @return bool
      */
     function setContentType()
@@ -219,7 +218,7 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
 
     /**
      * Get the tags associated with this media file
-     * 
+     *
      * @return array()
      */
     function getTags()
@@ -235,7 +234,7 @@ class UNL_MediaHub_Media extends UNL_MediaHub_Models_BaseMedia implements UNL_Me
 
     /**
      * Add a new tag for this media.
-     * 
+     *
      * @param string $newTag Tag or comma separated list of tags to add
      */
     function addTag($newTag)

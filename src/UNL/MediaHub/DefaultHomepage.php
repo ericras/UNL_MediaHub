@@ -1,12 +1,13 @@
 <?php
+
 class UNL_MediaHub_DefaultHomepage implements UNL_MediaHub_CacheableInterface
 {
     public $top_media;
     public $latest_media;
     public $featured_channels;
-    
+
     public $options = array();
-    
+
     function __construct($options = array())
     {
         $this->options = $options + $this->options;
@@ -14,7 +15,7 @@ class UNL_MediaHub_DefaultHomepage implements UNL_MediaHub_CacheableInterface
 
     function preRun($cached)
     {
-        
+
     }
 
     function getCacheKey()
@@ -38,5 +39,4 @@ class UNL_MediaHub_DefaultHomepage implements UNL_MediaHub_CacheableInterface
         $options['limit']  = 3;
         $this->featured_channels = new UNL_MediaHub_FeedList($options);
     }
-    
 }

@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Subscription extends UNL_MediaHub_Models_BaseSubscription
 {
     /**
@@ -36,7 +37,7 @@ class UNL_MediaHub_Subscription extends UNL_MediaHub_Models_BaseSubscription
 
     /**
      * Get the media filter specified by this subscription
-     * 
+     *
      * @return UNL_MediaHub_Filter
      */
     protected function getFilter()
@@ -47,7 +48,7 @@ class UNL_MediaHub_Subscription extends UNL_MediaHub_Models_BaseSubscription
 
     /**
      * Get the list of media matching this subscription
-     * 
+     *
      * @return UNL_MediaHub_MediaList
      */
     protected function getMediaList()

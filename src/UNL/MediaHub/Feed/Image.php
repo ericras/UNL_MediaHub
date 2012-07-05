@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Feed_Image extends UNL_MediaHub_Feed
 {
     /**

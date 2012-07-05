@@ -1,13 +1,14 @@
 <?php
+
 /**
  * A feed within the mediahub system.
- * 
+ *
  * @author bbieber
  */
 class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
 {
     protected $namespaces = array();
-    
+
     /**
      * Get by ID
      *
@@ -19,7 +20,7 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
     {
         return Doctrine::getTable(__CLASS__)->find($id);
     }
-    
+
     /**
      * get a feed by the title
      *
@@ -31,7 +32,7 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
     {
         return Doctrine::getTable(__CLASS__)->findOneByTitle($title);
     }
-    
+
     /**
      * Add Media to the feed
      *
@@ -56,10 +57,10 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
 
         return $q->execute();
     }
-    
+
     function getMediaList($options = array())
     {
-         return new UNL_MediaHub_MediaList(array('filter'=>new UNL_MediaHub_MediaList_Filter_ByFeed($this))+$options); 
+         return new UNL_MediaHub_MediaList(array('filter'=>new UNL_MediaHub_MediaList_Filter_ByFeed($this))+$options);
     }
 
     /**
@@ -80,12 +81,12 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
         $feed->addUser($user);
         return $feed;
     }
-    
+
     /**
      * Add a user with all permissions to this feed.
      *
      * @param UNL_MedaiYak_User $user The user to grant permission to
-     * 
+     *
      * @return void
      */
     function addUser(UNL_MediaHub_User $user)
@@ -107,7 +108,7 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
 
         return $q->execute();
     }
-    
+
     /**
      * Check if the user has a given permission for this feed.
      *
@@ -120,7 +121,7 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
     {
         return UNL_MediaHub_Permission::userHasPermission($user, $permission, $this);
     }
-    
+
     /**
      * Grant a user permission over the feed.
      *
@@ -133,12 +134,12 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
     {
         return UNL_MediaHub_Permission::grantUserPermission($user, $permission, $this);
     }
-    
+
     function addNamespace(UNL_MediaHub_Feed_NamespacedAttributes $namespace)
     {
-        
+
     }
-    
+
     /**
      * Check if this feed is linked to the related media.
      *
@@ -156,7 +157,7 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
 
     /**
      * Check if the feed has an image set
-     * 
+     *
      * @return bool
      */
     public function hasImage()
@@ -189,5 +190,5 @@ class UNL_MediaHub_Feed extends UNL_MediaHub_Models_BaseFeed
 
         return false;
     }
-    
+
 }

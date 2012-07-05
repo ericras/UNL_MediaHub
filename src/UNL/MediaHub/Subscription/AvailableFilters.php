@@ -1,4 +1,5 @@
 <?php
+
 class UNL_MediaHub_Subscription_AvailableFilters extends GlobIterator
 {
     function __construct($options = array())

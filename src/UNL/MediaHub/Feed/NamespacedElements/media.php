@@ -7,9 +7,9 @@
 class UNL_MediaHub_Feed_NamespacedElements_media extends UNL_MediaHub_Feed_NamespacedElements
 {
     protected $xmlns = 'media';
-    
+
     protected $uri = 'http://search.yahoo.com/mrss/';
-    
+
     function getChannelElements()
     {
         return array(

@@ -3,9 +3,9 @@
 class UNL_MediaHub_Feed_Form
 {
     public $action;
-    
+
     public $feed;
-    
+
     function __construct($options = array())
     {
         if (isset($options['id'])) {
