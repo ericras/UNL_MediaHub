@@ -18,11 +18,6 @@ $meta = '
 <meta name="title" content="'.htmlentities($context->title, ENT_QUOTES).'" />
 <meta name="description" content="'.htmlentities(strip_tags($context->description), ENT_QUOTES).'" />
 <link rel="image_src" href="'.$context->getThumbnailURL().'" />
-<script>
-    WDN.initializePlugin("modal", [function() {
-        WDN.jQuery(\'span.embed\').colorbox({inline: true, href:\'#sharing\', width:\'600px\', height:\'310px\'});
-    }]);
-</script>
 <meta name="medium" content="'.$type.'" />
 <meta property="og:type" content="'.$type.'">
 ';
@@ -121,7 +116,7 @@ echo $mediaplayer;
     <span class="size"><?php echo $dimensions[0] . 'x' .$dimensions[1];?></span>
     <?php } ?>
     <span class="duration"><?php
-        if(!empty($context->length)) {
+        if (!empty($context->length)) {
             $s = array('bytes', 'kb', 'MB', 'GB');
             $e = floor(log($context->length)/log(1024));
             echo sprintf('%.2f '.$s[$e], ($context->length/pow(1024, floor($e))));
@@ -143,6 +138,6 @@ echo $mediaplayer;
 </div>
 <div id="sharing">
     <h3>Embed</h3>
-    <p>Copy the following code into your unl.edu page</p>
-    <textarea cols="25" rows="6" onclick="this.select(); return false;"><?php echo htmlentities($mediaplayer); ?></textarea>
+    <p>Use this code on UNL pages using the 3.1+ version of the <a href="http://wdn.unl.edu/">WDN templates</a>.</p>
+    <textarea cols="25" rows="12" onclick="this.select(); return false;"><?php echo htmlentities(str_replace('controls autoplay', 'controls', $mediaplayer)); ?></textarea>
 </div>
