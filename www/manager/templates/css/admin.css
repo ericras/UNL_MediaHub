@@ -1,4 +1,4 @@
-/* 
+/*
 -------------------------------------------------
 Supporting styles for the manager areas
 -------------------------------------------------
@@ -12,14 +12,14 @@ Supporting styles for the manager areas
 div.actionItems a.action {
     width:180px;
     padding-left:16%;
-    margin-bottom:15px;	
+    margin-bottom:15px;
 }
 a.action { /*Setup the main UI for buttons*/
 	background-color: #385E9B;
 	background-image: url('images/iconPlus.png');
     background-image: url('images/iconPlus.png'), -moz-linear-gradient(top, #499bea 0%, #385E9B 100%);
     background-image: url('images/iconPlus.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#499bea), color-stop(100%,#385E9B));
-	background-position:5% 50%;	
+	background-position:5% 50%;
 	background-origin: padding-box;
 	background-repeat:no-repeat;
 	font-size:1em;
@@ -36,7 +36,7 @@ a.action:hover {
     color:#fff;
     -webkit-box-shadow: inset 1px 1px 3px rgba(29, 59, 108, 0.4);
     -moz-box-shadow: inset 1px 1px 3px rgba(29, 59, 108, 0.4);
-    box-shadow: inset 1px 1px 3px rgba(29, 59, 108, 0.4); 
+    box-shadow: inset 1px 1px 3px rgba(29, 59, 108, 0.4);
     background-color: #3665b2;
     background-image: url('images/iconPlus.png');
     background-image: url('images/iconPlus.png'), -moz-linear-gradient(top, #499bea 0%, #3665b2 100%);
@@ -100,13 +100,14 @@ a.action.delete:active {background-image:url('images/iconDelete.png');}
 	padding:10px 0;
 }
 
-.uploading {
-    display:none;
+#progress h2 {
+    background: url(images/loading.gif) no-repeat;
+    padding-left: 40px;
 }
 
 .media-preview ol {
     font-size:1.2em;
-    line-height:1.4em;	
+    line-height:1.4em;
 }
 .media-preview #thumbnail {
 	margin: 0px auto;
@@ -137,7 +138,7 @@ a.action.delete:active {background-image:url('images/iconDelete.png');}
 #maincontent #userList li .uid {
     font-size:0.6em;
     color: #a8a8a8;
-    display:block;  
+    display:block;
 }
 #maincontent #userList li img {display:block;margin-left:auto;margin-right:auto;}
 #maincontent #userList li form {
@@ -159,7 +160,7 @@ a.action.delete:active {background-image:url('images/iconDelete.png');}
 #maincontent #userList li form input[type='submit'] {
     -webkit-box-shadow: -1px 1px 3px #1a1a1a;
     -moz-box-shadow: -1px 1px 3px #1a1a1a;
-    box-shadow: -1px 1px 3px #1a1a1a; 
+    box-shadow: -1px 1px 3px #1a1a1a;
 }
 
 #maincontent .addData {
@@ -168,7 +169,7 @@ a.action.delete:active {background-image:url('images/iconDelete.png');}
     border-top:2px solid #d5d5d5;
     -webkit-box-shadow: inset 0px 1px 3px #e6e6e6;
     -moz-box-shadow: inset 0px 1px 3px #e6e6e6;
-    box-shadow: inset 0px 1px 3px #e6e6e6; 
+    box-shadow: inset 0px 1px 3px #e6e6e6;
 }
 #maincontent .addData input[type='text']{
     border:1px solid #d5d5d5;
@@ -212,7 +213,7 @@ a.action.delete:active {background-image:url('images/iconDelete.png');}
     color:#4b4c47 !important;
     padding:15px 15px 15px 50px;
     margin-bottom:10px;
-    font-size:1.5em; 
+    font-size:1.5em;
     font-weight:bold;
     display:block;
 }

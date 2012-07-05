@@ -26,16 +26,16 @@ function return_bytes($val)
 ?>
 <script type="text/javascript">
 var upload = function() {
-    
+
     /* private variables */
-    
+
     var uploadprogress = null;
-    
+
     var startTime = null;
     var upload_max_filesize = <?php echo return_bytes(ini_get('upload_max_filesize'));?>;
-    
+
     var infoUpdated = 0;
-    
+
     var writeStatus = function(text,color) {
         var statDiv = document.getElementById("uploadstatus");
         if (color == 1 ) {
@@ -55,15 +55,13 @@ var upload = function() {
            uploadprogress = document.getElementById("uploadprogress");
            startTime = new Date();
            infoUpdated = 0;
-           
+
            // Show progress bar
            WDN.jQuery('#progress').show();
-           
+
            // Hide the submit button until the upload is complete.
            WDN.jQuery('#continue3').attr('disabled', 'disabled');
-           
-           WDN.jQuery('.uploading').show();
-           
+
            this.requestInfo();
         },
         stop: function(url) {
@@ -84,9 +82,7 @@ var upload = function() {
 
                 // Hide upload progress
                 WDN.jQuery('#progress').hide();
-                
-                WDN.jQuery('.uploading').hide();
-                
+
                 //Show the continue button.
                 WDN.jQuery('#continue3').removeAttr('disabled');
 
@@ -108,7 +104,7 @@ var upload = function() {
         updateInfo: function(uploaded, total, startTime, percentage) {
             //We made it this far, that means the progress bar should be working in older browsers.
             WDN.jQuery('.meter').show();
-            
+
             if (uploaded) {
                 infoUpdated++;
                 if (total > upload_max_filesize) {
@@ -149,7 +145,7 @@ var upload = function() {
     </fieldset>
 </form>
 <div id='progress' class='grid11' style="display:none;">
-    <h2>Your media is being uploaded <img class='uploading' src="/wdn/templates_3.0/scripts/plugins/tinymce/themes/advanced/skins/unl/img/progress.gif" alt="progress animated gif" /></h2>
+    <h2>Your media is being uploaded</h2>
     <div class="meter animate">
         <span style="width:0%;"><span></span></span>
     </div>

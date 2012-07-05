@@ -1,13 +1,11 @@
-<script type="text/javascript">
-    //<![CDATA[ 
-    WDN.jQuery(document).ready(function ($) { 
-        WDN.loadCSS('/wdn/templates_3.0/scripts/plugins/ui/jquery-ui.css'); 
-        WDN.loadCSS('/wdn/templates_3.0/scripts/plugins/ui/ui.datepicker.css'); 
-        WDN.loadJS('/wdn/templates_3.0/scripts/plugins/ui/jQuery.ui.js', function () {
-            $('#media_creation_date').datepicker({ dateFormat: 'yy-mm-dd' }); 
-        }); 
-    }); 
-    //]]>
+<script>
+    WDN.jQuery(document).ready(function ($) {
+        WDN.loadCSS('/wdn/templates_3.1/scripts/plugins/ui/jquery-ui.css');
+        WDN.loadCSS('/wdn/templates_3.1/scripts/plugins/ui/ui.datepicker.css');
+        WDN.loadJS('/wdn/templates_3.1/scripts/plugins/ui/jQuery.ui.js', function () {
+            $('#media_creation_date').datepicker({ dateFormat: 'yy-mm-dd' });
+        });
+    });
 </script>
 
 <li>

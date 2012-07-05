@@ -22,7 +22,7 @@ UNL_MediaHub_Controller::setReplacementData('breadcrumbs', '
 </div>
 <script type="text/javascript">WDN.initializePlugin('events', function(){
     WDN.events.calURL = 'http://events.unl.edu/livenews/';
-	WDN.events.limit  = 5;
+	WDN.events.limit = 5;
 	WDN.events.initialize();
 	});
 </script>
@@ -31,17 +31,17 @@ UNL_MediaHub_Controller::setReplacementData('breadcrumbs', '
 		<span class="liveIndicator">Live</span>
 		<div id="wdn_live_stream"></div>
 		<script type='text/javascript'>
-		WDN.loadJS('wdn/templates_3.0/scripts/plugins/swfobject/jquery.swfobject.1-1-1.min.js', function(){
+		WDN.loadJS('/wdn/templates_3.1/scripts/plugins/swfobject/jquery.swfobject.1-1-1.min.js', function(){
 			//Fallback for flash
-			WDN.jQuery('#wdn_live_stream').prepend('<p>To view this video you should download <a href="http://get.adobe.com/flashplayer/">Adobe Flash Player</a> or use a browser that supports H264/WebM video.</p>');
-			
+			WDN.jQuery('#wdn_live_stream').prepend('<p>To view this video download <a href="http://get.adobe.com/flashplayer/">Adobe Flash Player</a> or use a browser that supports H264/WebM video.</p>');
+
 			WDN.jQuery('#wdn_live_stream').flash(
-				{     
-					swf: WDN.template_path + 'wdn/templates_3.0/includes/swf/player5.4.swf',   
+				{
+					swf: WDN.template_path + 'wdn/templates_3.0/includes/swf/player5.4.swf',
 					allowfullscreen: 'true',
 					allowscriptaccess: 'always',
-					flashvars: {   
-						'file': 'live_3.sdp',   
+					flashvars: {
+						'file': 'live_3.sdp',
 						'autostart': 'true',
 						'streamer': 'rtmp://real.unl.edu/live_3/'
 						//'image': '<?php echo UNL_MediaHub_Controller::getURL();?>templates/html/css/images/innovation_campus.jpg'
@@ -52,7 +52,7 @@ UNL_MediaHub_Controller::setReplacementData('breadcrumbs', '
 					name: 'jwPlayer'
 				}
 			);
-			
+
 		});
 		</script>
 <!--
