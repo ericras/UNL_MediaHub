@@ -4,35 +4,35 @@ Supporting styles for  the display of the COMMENTS used on media pages.
 
 */
 #comments ul li {
-    list-style:none;
-    margin-left:-28px;
-    padding:10px;
-    margin-bottom:20px;
-    border-bottom:1px dotted #bbb;
+    list-style: none;
+    margin-left: -28px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #bbb;
 }
 #comments ul li em {
-    font-size:.8em;
-    color:#666666;
-    margin-left:5px;
+    font-size: .8em;
+    color: #666666;
+    margin-left: 5px;
 }
-h3 a {
-    font-size:.7em;
+#comments h3 a {
+    font-size: .7em;
 }
 #maincontent form fieldset {
-    width:460px;
+    width: 460px;
 }
 #maincontent form textarea {
-    width:270px;
+    width: 270px;
 }
 blockquote {
     padding: 5px 5px 5px 48px;
-    clear:both;
+    clear: both;
 }
-.profile_pic{
-    float:left;
+.profile_pic {
+    float: left;
 }
 #maincontent h5.commenter {
-    font-weight:bold;
-    padding-left:53px;
-    margin-bottom:0;
+    font-weight: bold;
+    padding-left: 53px;
+    margin-bottom: 0;
 }

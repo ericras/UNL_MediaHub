@@ -45,7 +45,7 @@ $page->contactinfo = '<h3>Contacting Us</h3>
 Lincoln, NE 68588<br />
 402-472-7211</p>';
 
-$page->footercontent = '&copy; '.date('Y').' University of Nebraska&mdash;Lincoln | Lincoln, NE 68588 | 402-472-7211 | <a href="http://www1.unl.edu/comments/" title="Click here to direct your comments and questions">comments?</a><br />
+$page->footercontent = '&copy; '.date('Y').' University of Nebraska&ndash;Lincoln | Lincoln, NE 68588 | 402-472-7211 | <a href="http://www1.unl.edu/comments/" title="Click here to direct your comments and questions">comments?</a><br />
 The UNL Office of University Communications maintains this database of online media.<br />
     If there are additional functions that would be of interest to you, please
     <a href="http://www1.unl.edu/comments/">send us a comment</a>.

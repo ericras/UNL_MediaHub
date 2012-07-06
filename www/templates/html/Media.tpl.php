@@ -60,7 +60,6 @@ echo $mediaplayer;
     ?>
   <p><?php echo $summary; ?></p>
 
-
     <ul id="mediaTags">
         <?php
         foreach ($context->getTags() as $tag) {
@@ -71,7 +70,6 @@ echo $mediaplayer;
         } else {
             echo '<li id="mediaTagsAdd"><a href="https://login.unl.edu/cas/login?service='.urlencode(UNL_MediaHub_Controller::getURL()).'">Login to add tags </a></li>';
         }
-
         ?>
     </ul>
 
