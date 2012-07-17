@@ -1,1 +1,1 @@
-<audio id='player' preload="auto" src="<?php echo $context->url?>"></audio>
+<audio class="wdn_player" preload="auto" src="<?php echo $context->url?>"></audio>
