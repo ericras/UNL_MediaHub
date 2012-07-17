@@ -136,6 +136,5 @@ echo $mediaplayer;
 </div>
 <div id="sharing">
     <h3>Embed</h3>
-    <p>Use this code on UNL pages using the 3.1+ version of the <a href="http://wdn.unl.edu/">WDN templates</a>.</p>
     <textarea cols="25" rows="12" onclick="this.select(); return false;"><?php echo htmlentities(str_replace('controls autoplay', 'controls', $mediaplayer)); ?></textarea>
 </div>
