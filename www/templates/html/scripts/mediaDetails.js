@@ -96,7 +96,7 @@ var mediaDetails = (function($) {
             thumbnail.onerror = '';
         }
     };
-}(WDN.jQuery);
+})(WDN.jQuery);
 
 WDN.jQuery(document).ready(function($) {
     if (formView == 'edit') { //we're editting, so hide the introduction and go straight to the form
